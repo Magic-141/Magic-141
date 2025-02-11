@@ -158,7 +158,7 @@
       object-fit: cover;
       opacity: 0;
       transition: opacity 2s ease-in-out;
-      filter: blur(3px) brightness(0.4);
+      filter: blur(3px) brightness(0.8);
     }
 
     .video-background video.active {
@@ -172,14 +172,7 @@
       left: 0;
       width: 100%;
       height: 100vh;
-      background: linear-gradient(180deg, 
-        rgba(10,10,10,0.4) 0%,
-        rgba(10,10,10,0.6) 20%,
-        rgba(10,10,10,0.7) 40%,
-        rgba(10,10,10,0.8) 60%,
-        rgba(10,10,10,0.9) 80%,
-        #0a0a0a 100%
-      );
+      
       pointer-events: none;
       z-index: 1;
     }
@@ -234,26 +227,52 @@
     const videos = document.querySelectorAll('.video-background video');
     let currentVideoIndex = 0;
     
-    // Preload all videos
-    videos.forEach(video => {
-      video.play().catch(function(error) {
-        console.log("Video play failed:", error);
-      });
-    });
+    // Function to preload videos
+    const preloadVideos = async () => {
+      for (const video of videos) {
+        try {
+          await video.play();
+          video.style.opacity = '0';
+        } catch (error) {
+          console.log("Video play failed:", error);
+        }
+      }
+    };
+
+    // Initialize first video
+    const showInitialVideo = () => {
+      videos[0].style.opacity = '0.6';
+    };
+
+    // Preload videos and show first one
+    preloadVideos().then(showInitialVideo);
     
-    // Show first video
-    videos[0].classList.add('active');
-    
-    // Change video every 8 seconds
+    // Change video every 8 seconds with crossfade
     setInterval(() => {
-      const oldVideo = videos[currentVideoIndex];
-      currentVideoIndex = (currentVideoIndex + 1) % videos.length;
-      const newVideo = videos[currentVideoIndex];
+      // Fade out current video
+      videos[currentVideoIndex].style.opacity = '0';
       
-      // Crossfade transition
-      oldVideo.classList.remove('active');
-      newVideo.classList.add('active');
+      // Update index
+      currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+      
+      // Fade in next video
+      videos[currentVideoIndex].style.opacity = '0.6';
     }, 8000);
+
+    // Add scroll event listener to adjust video opacity
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const maxOpacity = 0.6;
+      const minOpacity = 0.00;
+      
+      // Calculate opacity based on scroll position
+      // Decrease opacity as user scrolls down
+      const opacity = Math.max(maxOpacity - (scrollPosition / windowHeight) * maxOpacity, minOpacity);
+      
+      // Apply opacity to current video
+      videos[currentVideoIndex].style.opacity = opacity.toString();
+    });
   });
 </script>
 
@@ -263,36 +282,43 @@
     <h2 class="subtitle has-text-centered mt-1" style="background: transparent !important; color: white;">Generating One Second Video Clips within One Second</h2>
     <div class="is-size-5 publication-authors" style="background: transparent !important;">
       <span class="author-block" style="background: transparent !important;">
-        <a href="https://keunhong.com" style="background: transparent !important; color: white;">Keunhong Park</a><sup style="color: white;">1</sup>
+        <a href=" " style="background: transparent !important; color: white;">Hongwei Yi</a ><sup style="color: white;">2</sup>
       </span>
       <span class="author-block" style="background: transparent !important;">
-        <a href="https://utkarshsinha.com" style="background: transparent !important; color: white;">Utkarsh Sinha</a><sup style="color: white;">1</sup>
+        <a href="https://shaoshitong.github.io/" style="background: transparent !important; color: white;">Shitong Shao</a ><sup style="color: white;">2</sup>
       </span>
       <span class="author-block" style="background: transparent !important;">
-        <a href="https://jonbarron.info" style="background: transparent !important; color: white;">Jonathan T. Barron</a><sup style="color: white;">1</sup>
+        <a href="https://owen718.github.io/" style="background: transparent !important; color: white;">Tian Ye</a ><sup style="color: white;">2</sup>
       </span>
       <span class="author-block" style="background: transparent !important;">
-        <a href="https://sofienbouaziz.com" style="background: transparent !important; color: white;">Sofien Bouaziz</a><sup style="color: white;">1</sup>
+        <a href="" style="background: transparent !important; color: white;">Jiantong Zhao</a ><sup style="color: white;">2</sup>
+      </span>
+      <span class="author-block" style="background: transparent !important;">
+        <a href="" style="background: transparent !important; color: white;">Qingyu Yin</a ><sup style="color: white;">2</sup>
       </span>
     </div>
     <div class="is-size-5 publication-authors" style="background: transparent !important;">
       <span class="author-block" style="background: transparent !important;">
-        <a href="https://keunhong.com" style="background: transparent !important; color: white;">Qingyu Yin</a><sup style="color: white;">1</sup>
+        <a href="https://mlingelbach.com/" style="background: transparent !important; color: white;">Michael Lingelbach</a ><sup style="color: white;">2</sup>
       </span>
       <span class="author-block" style="background: transparent !important;">
-        <a href="https://utkarshsinha.com" style="background: transparent !important; color: white;">Utkarsh Sinha</a><sup style="color: white;">1</sup>
+        <a href="https://yuanli2333.github.io/" style="background: transparent !important; color: white;">Li Yuan</a ><sup style="color: white;">1</sup>
       </span>
       <span class="author-block" style="background: transparent !important;">
-        <a href="https://jonbarron.info" style="background: transparent !important; color: white;">Jonathan T. Barron</a><sup style="color: white;">1</sup>
+        <a href="https://www.pkuml.org/" style="background: transparent !important; color: white;">Yonghong Tian</a ><sup style="color: white;">1</sup>
       </span>
-      <span class="author-block" style="background: transparent !important;">
-        <a href="https://sofienbouaziz.com" style="background: transparent !important; color: white;">Sofien Bouaziz</a><sup style="color: white;">1</sup>
+      <span class="author-block" style="background: transparent !important;"></span>
+        <a href="https://xieenze.github.io/" style="background: transparent !important; color: white;">Enze Xie</a ><sup style="color: white;">3</sup>
+      </span>
+      <span class="author-block" style="background: transparent !important;"></span>
+        <a href="https://zhoudaquan.github.io/homepage.io/index.html" style="background: transparent !important; color: white;">Daquan Zhou</a ><sup style="color: white;">1</sup>
       </span>
     </div>
 
     <div class="is-size-5 publication-authors" style="background: transparent !important;">
-      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">1</sup>Hedra</span>
-      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">2</sup>Other Institutions</span>
+      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">1</sup>Peking University</span>
+      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">2</sup>Hedra Inc.</span>
+      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">3</sup>Nvidia</span>
     </div>
 
     <div class="column has-text-centered" style="background: transparent !important;">
