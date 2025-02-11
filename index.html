@@ -204,6 +204,43 @@
       z-index: 2;
     }
   </style>
+  <style>
+    .carousel {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+      font-size: 0; /* Remove any potential inline-block spacing */
+    }
+    
+    .carousel::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    .prompt-wrap {
+      flex: 0 0 auto;
+      height: 180px;
+      position: relative;
+      font-size: 16px; /* Reset font size for content */
+      display: flex; /* Use flexbox to center the video */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+    }
+
+    .prompt-wrap video {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      display: block; /* Remove any potential inline spacing */
+      margin: 0; /* Remove any margins */
+    }
+
+    .results-carousel {
+      padding: 0;
+      white-space: nowrap; /* Prevent wrapping */
+    }
+  </style>
 </head>
 <body>
 
@@ -411,28 +448,28 @@
       <h3 class="title is-4"  style=" margin-bottom: 0.1rem;"> Natural scenery </h3> 
       <div id="results-carousel" class="carousel results-carousel">
         <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/android_face_coming_to_life_repeat-0-2.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/bird_ruffling_feathers_repeat-0-5.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/bounty_hunter_reloading_plasma_rifle_repeat-0-6.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/624_1739271433.mp4"
                     type="video/mp4">
           </video>
@@ -445,28 +482,28 @@
       <div class="container" style="margin-top: 2rem;">
         <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
           <div class="prompt-wrap">
-            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <video poster="" autoplay controls muted loop playsinline>
               <source src="./static/videos/11_repeat-0.mp4"
                       type="video/mp4">
             </video>
             <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
           </div>
           <div class="prompt-wrap">
-            <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <video poster="" autoplay controls muted loop playsinline>
               <source src="./static/videos/56_repeat-0-5 2.mp4"
                       type="video/mp4">
             </video>
             <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
           </div>
           <div class="prompt-wrap">
-            <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <video poster="" autoplay controls muted loop playsinline>
               <source src="./static/videos/bounty_hunter_reloading_plasma_rifle_repeat-0-6.mp4"
                       type="video/mp4">
             </video>
             <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
           </div>
           <div class="prompt-wrap">
-            <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <video poster="" autoplay controls muted loop playsinline>
               <source src="./static/videos/2813_1739067107(Video in Original Quality).mp4"
                       type="video/mp4">
             </video>
@@ -480,28 +517,28 @@
     <div class="container" style=" margin-top: 2rem;">
       <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
         <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/11_repeat-0.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/13_repeat-0.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/48_repeat-0-15.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/56_repeat-0-5 2.mp4"
                     type="video/mp4">
           </video>
@@ -515,28 +552,28 @@
     <div class="container" style=" margin-top: 2rem;">
       <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
         <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/60_repeat-0-0.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/88._repeat-0-7.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/89_repeat-0-8.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/2813_1739067107(Video in Original Quality).mp4"
                     type="video/mp4">
           </video>
@@ -550,28 +587,28 @@
     <div class="container" style="margin-top: 2rem;">
       <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
         <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/60_repeat-0-0.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/88._repeat-0-7.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/89_repeat-0-8.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/2813_1739067107(Video in Original Quality).mp4"
                     type="video/mp4">
           </video>
@@ -634,35 +671,35 @@
       <h3 class="title is-4">50 Steps</h3> 
       <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
         <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/distill/teacher01_watermark.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/distill/teacher02_watermark.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/distill/teacher04_watermark.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/distill/teacher05_watermark.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/distill/teacher07_watermark.mp4"
                     type="video/mp4">
           </video>
@@ -675,35 +712,35 @@
       <h3 class="title is-4">4 Steps</h3> 
       <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
         <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/distill/student01_watermark.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/distill/student02_watermark.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/distill/student04_watermark.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/distill/student05_watermark.mp4"
                     type="video/mp4">
           </video>
           <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
         </div>
         <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+          <video poster="" autoplay controls muted loop playsinline>
             <source src="./static/videos/distill/student07_watermark.mp4"
                     type="video/mp4">
           </video>
