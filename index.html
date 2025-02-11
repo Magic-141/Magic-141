@@ -223,7 +223,7 @@
 <section class="section">
   <div class="container is-max-desktop">
 
-    <div class="columns is-centered is-gapless">
+    <div class="columns is-centered is-gapless" style="margin-bottom: 0rem;">
 
       <div class="column column-spacing">
         <div class="content">
@@ -266,7 +266,7 @@
       </div>
     </div>
 
-    <div class="columns is-centered is-gapless">
+    <div class="columns is-centered is-gapless" style="margin-bottom: 1rem;">
 
       <div class="column column-spacing">
         <div class="content">
@@ -309,7 +309,7 @@
       </div>
     </div>
 
-    <div class="columns is-centered is-gapless">
+    <div class="columns is-centered is-gapless" style="margin-bottom: 1rem;">
 
       <div class="column column-spacing">
         <div class="content">
@@ -352,7 +352,7 @@
       </div>
     </div>
 
-    <div class="columns is-centered is-gapless">
+    <div class="columns is-centered is-gapless" style="margin-bottom: 1rem;">
 
       <div class="column column-spacing">
         <div class="content">
@@ -395,49 +395,25 @@
       </div>
     </div>
   </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Method</h2>
-        <div class="content has-text-centered">
-          <img src="./static/images/frame.png" alt="Framework of Magic 1-For-1" style="max-width: 60%; height: auto;"/>
-          <p class="has-text-centered is-size-7">Figure 2: Overall Architecture of Magic 1-For-1.</p>
-        </div>
-        <div class="content has-text-justified">
-          <p>
-            Our approach combines both diffusion-based and retrieval-based methods for image prior generation. We define a unified function G that integrates both generation mechanisms: x0 = G(xT , y, R(y); θ), where xT represents the initial noise, y is the textual input, R(y) is the retrieved set of relevant images, and θ represents the model parameters. The retrieval function R leverages text-image similarity to find the most relevant reference images from a corpus, enhancing the generation process with real-world visual context.
-          </p>
-          <p>
-            For Image-to-Video (I2V) generation, we employ a novel architecture that takes a latent tensor X of shape T × C × H × W as input. To incorporate the image condition I, we treat it as the first frame and apply zero-padding to construct a tensor Io. A binary mask m is introduced to mark the temporal positions, with the first position set to 1 and subsequent positions to 0. The model processes this combined input through dual-stream and single-stream DiT blocks, with modulation ensuring semantic alignment between the generated video and both the reference image and textual description.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero is-light is-small">
+  
   <div class="hero-body">
-    <div class="container">
+    <div class="container" style="max-width: 80%;">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
           <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
+            <source src="./static/videos/fullbody.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-chair-tp">
           <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
+            <source src="./static/videos/fullbody.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
+            <source src="./static/videos/fullbody.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -471,7 +447,150 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Architecture Overview</h2>
+
+    <div class="container" style="max-width: 100%;">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-fullbody">
+          <img src="./static/images/frame.png" alt="Full Body">
+        </div>
+        <div class="item item-fullbody">
+          <img src="./static/images/frame.png" alt="Full Body">
+        </div>
+        <div class="item item-fullbody">
+          <img src="./static/images/frame.png" alt="Full Body">
+        </div>
+        <div class="item item-fullbody">
+          <img src="./static/images/frame.png" alt="Full Body">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered", style="margin-top: 2rem;">
+      <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <p>
+            Magic 1-For-1 is an efficient video generation model designed to create short video clips quickly.  It simplifies the complex task of generating videos from text by breaking it down into two easier steps: first, generating an image from the text, and then generating a video from that image. This approach leverages the relative simplicity of text-to-image generation.  The model incorporates several optimizations, including using both text and visual information to guide the image generation, and streamlining the video generation process to reduce the number of steps required.
+          </p>
+          <p>
+            The model further enhances efficiency through techniques like adversarial step distillation, which accelerates the generation process, and parameter sparsification, which reduces memory usage.  These methods allow the model to generate short video clips in just a few seconds.  By using a sliding window approach during inference, the model can also create longer videos, up to a minute in length, while maintaining good visual quality and motion.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="hero-body">
+    <div class="container" style="max-width: 80%;">
+      <h2 class="title is-3">Step Distillation</h2>
+      <p> Magic 1-For-1 uses DMD2, a state-of-the-art step distillation algorithm, to train a "generator" model that can produce high-quality videos in just a few steps. This generator model is trained in conjunction with two other models: one that approximates the real data distribution and another that approximates the distribution of the generated data. By aligning these distributions, the generator model learns to produce realistic videos efficiently. We also incorporate CFG distillation to further reduce the computational overhead during inference.</p>
+    
+    </div>  
+  </div> 
+  <div class="hero-body" style="margin-top: -4rem;">
+    <div class="container" style="max-width: 80%;">
+      <h3 class="title is-4">50 Steps</h3> 
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+    <div class="container" style="max-width: 80%; margin-top: 2rem;">
+      <h3 class="title is-4">4 Steps</h3> 
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+
+
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the source code of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+</body>
+</html>
