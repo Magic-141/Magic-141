@@ -83,6 +83,12 @@
       margin-top: 10rem;
       background-color: #0a0a0a !important;
     }
+    .hero-transparent {
+      position: relative;
+      z-index: 2;
+      margin-top: 25vh;
+      background-color: transparent !important;
+    }
     .hero, .hero-body, .hero.is-small {
       background-color: #0a0a0a !important;
     }
@@ -130,90 +136,206 @@
       pointer-events: all;
     }
   </style>
+  <style>
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200vh;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .video-background video {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 100%;
+      width: auto;
+      height: 100vh;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+      filter: blur(3px) brightness(0.4);
+    }
+
+    .video-background video.active {
+      opacity: 0.15;
+    }
+
+    .video-background::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(180deg, 
+        rgba(10,10,10,0.4) 0%,
+        rgba(10,10,10,0.6) 20%,
+        rgba(10,10,10,0.7) 40%,
+        rgba(10,10,10,0.8) 60%,
+        rgba(10,10,10,0.9) 80%,
+        #0a0a0a 100%
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-transparent {
+      position: relative;
+      z-index: 2;
+      margin-top: 0;
+      background-color: transparent !important;
+    }
+
+    .hero-transparent * {
+      position: relative;
+      z-index: 2;
+      background-color: transparent !important;
+    }
+
+    .hero-transparent .title,
+    .hero-transparent .subtitle,
+    .hero-transparent .publication-authors,
+    .hero-transparent .publication-links {
+      position: relative;
+      z-index: 2;
+      background-color: transparent !important;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
 </head>
 <body>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title mb-1" style="text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);">Magic 1-For-1<h1>
-          <h2 class="subtitle has-text-centered mt-1">Generating One Second Video Clips within One Second</h2>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>1</sup>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>1</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://sofienbouaziz.com">Sofien Bouaziz</a><sup>1</sup>
-            </span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://keunhong.com">Qingyu Yin</a><sup>1</sup>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>1</sup>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>1</sup>
-            </span>
-            <span class="author-block">
-              <a href="https://sofienbouaziz.com">Sofien Bouaziz</a><sup>1</sup>
-            </span>
-          </div>
+<div class="video-background" style="opacity: 1;">
+  <video id="bg-video-1" autoplay muted loop playsinline style="opacity: 1;">
+    <source src="./static/videos/android_face_coming_to_life_repeat-0-2.mp4" type="video/mp4">
+  </video>
+  <video id="bg-video-2" autoplay muted loop playsinline style="opacity: 1;">
+    <source src="./static/videos/bird_ruffling_feathers_repeat-0-5.mp4" type="video/mp4">
+  </video>
+  <video id="bg-video-3" autoplay muted loop playsinline style="opacity: 1;">
+    <source src="./static/videos/bounty_hunter_reloading_plasma_rifle_repeat-0-6.mp4" type="video/mp4">
+  </video>
+  <video id="bg-video-4" autoplay muted loop playsinline style="opacity: 1;">
+    <source src="./static/videos/624_1739271433.mp4" type="video/mp4">
+  </video>
+</div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Hedra</span>
-            <span class="author-block"><sup>2</sup>Other Institutions</span>
-          </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('.video-background video');
+    let currentVideoIndex = 0;
+    
+    // Preload all videos
+    videos.forEach(video => {
+      video.play().catch(function(error) {
+        console.log("Video play failed:", error);
+      });
+    });
+    
+    // Show first video
+    videos[0].classList.add('active');
+    
+    // Change video every 8 seconds
+    setInterval(() => {
+      const oldVideo = videos[currentVideoIndex];
+      currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+      const newVideo = videos[currentVideoIndex];
+      
+      // Crossfade transition
+      oldVideo.classList.remove('active');
+      newVideo.classList.add('active');
+    }, 8000);
+  });
+</script>
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
-            </div>
+<section class="hero-transparent">
+  <div class="column has-text-centered" style="margin-top: 14rem;">
+    <h1 class="title is-1 publication-title mb-1" style="background: transparent !important; text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8); color: white;">Magic 1-For-1</h1>
+    <h2 class="subtitle has-text-centered mt-1" style="background: transparent !important; color: white;">Generating One Second Video Clips within One Second</h2>
+    <div class="is-size-5 publication-authors" style="background: transparent !important;">
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://keunhong.com" style="background: transparent !important; color: white;">Keunhong Park</a><sup style="color: white;">1</sup>
+      </span>
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://utkarshsinha.com" style="background: transparent !important; color: white;">Utkarsh Sinha</a><sup style="color: white;">1</sup>
+      </span>
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://jonbarron.info" style="background: transparent !important; color: white;">Jonathan T. Barron</a><sup style="color: white;">1</sup>
+      </span>
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://sofienbouaziz.com" style="background: transparent !important; color: white;">Sofien Bouaziz</a><sup style="color: white;">1</sup>
+      </span>
+    </div>
+    <div class="is-size-5 publication-authors" style="background: transparent !important;">
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://keunhong.com" style="background: transparent !important; color: white;">Qingyu Yin</a><sup style="color: white;">1</sup>
+      </span>
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://utkarshsinha.com" style="background: transparent !important; color: white;">Utkarsh Sinha</a><sup style="color: white;">1</sup>
+      </span>
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://jonbarron.info" style="background: transparent !important; color: white;">Jonathan T. Barron</a><sup style="color: white;">1</sup>
+      </span>
+      <span class="author-block" style="background: transparent !important;">
+        <a href="https://sofienbouaziz.com" style="background: transparent !important; color: white;">Sofien Bouaziz</a><sup style="color: white;">1</sup>
+      </span>
+    </div>
 
-          </div>
-        </div>
+    <div class="is-size-5 publication-authors" style="background: transparent !important;">
+      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">1</sup>Hedra</span>
+      <span class="author-block" style="background: transparent !important; color: white;"><sup style="color: white;">2</sup>Other Institutions</span>
+    </div>
+
+    <div class="column has-text-centered" style="background: transparent !important;">
+      <div class="publication-links" style="background: transparent !important;">
+        <span class="link-block" style="background: transparent !important;">
+          <a href="https://arxiv.org/abs/2011.12948"
+              class="external-link button is-normal is-rounded is-dark" style="background: rgba(0, 0, 0, 0.5) !important;">
+            <span class="icon" style="background: transparent !important;">
+                <i class="ai ai-arxiv"></i>
+            </span>
+            <span style="background: transparent !important;">arXiv</span>
+          </a>
+        </span>
+        <!-- Video Link. -->
+        <span class="link-block" style="background: transparent !important;">
+          <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+              class="external-link button is-normal is-rounded is-dark" style="background: rgba(0, 0, 0, 0.5) !important;">
+            <span class="icon" style="background: transparent !important;">
+                <i class="fab fa-youtube"></i>
+            </span>
+            <span style="background: transparent !important;">Video</span>
+          </a>
+        </span>
+        <!-- Code Link. -->
+        <span class="link-block" style="background: transparent !important;">
+          <a href="https://github.com/google/nerfies"
+              class="external-link button is-normal is-rounded is-dark" style="background: rgba(0, 0, 0, 0.5) !important;">
+            <span class="icon" style="background: transparent !important;">
+                <i class="fab fa-github"></i>
+            </span>
+            <span style="background: transparent !important;">Code</span>
+            </a>
+        </span>
+        <!-- Dataset Link. -->
+        <span class="link-block" style="background: transparent !important;">
+          <a href="https://github.com/google/nerfies/releases/tag/0.1"
+              class="external-link button is-normal is-rounded is-dark" style="background: rgba(0, 0, 0, 0.5) !important;">
+            <span class="icon" style="background: transparent !important;">
+                <i class="far fa-images"></i>
+            </span>
+            <span style="background: transparent !important;">Data</span>
+            </a>
+        </span>
       </div>
     </div>
   </div>
