@@ -7,7 +7,7 @@
         within One Second">
   <meta name="keywords" content="Video Generation, Diffusion Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Magic 1-For-1: Generating One Second Video Clips within One Second</title>
+  <title>Magic 1-For-1: Generating One Minute Video Clips within One Minute</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -204,6 +204,43 @@
       z-index: 2;
     }
   </style>
+  <style>
+    .carousel {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+      font-size: 0; /* Remove any potential inline-block spacing */
+    }
+    
+    .carousel::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    .prompt-wrap {
+      flex: 0 0 auto;
+      height: 180px;
+      position: relative;
+      font-size: 16px; /* Reset font size for content */
+      display: flex; /* Use flexbox to center the video */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+    }
+
+    .prompt-wrap video {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      display: block; /* Remove any potential inline spacing */
+      margin: 0; /* Remove any margins */
+    }
+
+    .results-carousel {
+      padding: 0;
+      white-space: nowrap; /* Prevent wrapping */
+    }
+  </style>
 </head>
 <body>
 
@@ -282,7 +319,7 @@
     <h2 class="subtitle has-text-centered mt-1" style="background: transparent !important; color: white;">Generating One Second Video Clips within One Second</h2>
     <div class="is-size-5 publication-authors" style="background: transparent !important;">
       <span class="author-block" style="background: transparent !important;">
-        <a href=" " style="background: transparent !important; color: white;">Hongwei Yi</a ><sup style="color: white;">2</sup>
+        <a href="https://scholar.google.com/citations?user=ocMf7fQAAAAJ&hl=zh-CN" style="background: transparent !important; color: white;">Hongwei Yi</a ><sup style="color: white;">2</sup>
       </span>
       <span class="author-block" style="background: transparent !important;">
         <a href="https://shaoshitong.github.io/" style="background: transparent !important; color: white;">Shitong Shao</a ><sup style="color: white;">2</sup>
@@ -294,7 +331,7 @@
         <a href="" style="background: transparent !important; color: white;">Jiantong Zhao</a ><sup style="color: white;">2</sup>
       </span>
       <span class="author-block" style="background: transparent !important;">
-        <a href="" style="background: transparent !important; color: white;">Qingyu Yin</a ><sup style="color: white;">2</sup>
+        <a href="mikastars.notion.site" style="background: transparent !important; color: white;">Qingyu Yin</a ><sup style="color: white;">2</sup>
       </span>
     </div>
     <div class="is-size-5 publication-authors" style="background: transparent !important;">
@@ -324,7 +361,7 @@
     <div class="column has-text-centered" style="background: transparent !important;">
       <div class="publication-links" style="background: transparent !important;">
         <span class="link-block" style="background: transparent !important;">
-          <a href="https://arxiv.org/abs/2011.12948"
+          <a href="https://arxiv.org/abs/2502.07701"
               class="external-link button is-normal is-rounded is-dark" style="background: rgba(0, 0, 0, 0.5) !important;">
             <span class="icon" style="background: transparent !important;">
                 <i class="ai ai-arxiv"></i>
@@ -333,18 +370,18 @@
           </a>
         </span>
         <!-- Video Link. -->
-        <span class="link-block" style="background: transparent !important;">
-          <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+        <!-- <span class="link-block" style="background: transparent !important;">
+          <a href=""
               class="external-link button is-normal is-rounded is-dark" style="background: rgba(0, 0, 0, 0.5) !important;">
             <span class="icon" style="background: transparent !important;">
                 <i class="fab fa-youtube"></i>
             </span>
             <span style="background: transparent !important;">Video</span>
           </a>
-        </span>
+        </span> -->
         <!-- Code Link. -->
         <span class="link-block" style="background: transparent !important;">
-          <a href="https://github.com/google/nerfies"
+          <a href="https://github.com/DA-Group-PKU/Magic-1-For-1"
               class="external-link button is-normal is-rounded is-dark" style="background: rgba(0, 0, 0, 0.5) !important;">
             <span class="icon" style="background: transparent !important;">
                 <i class="fab fa-github"></i>
@@ -353,35 +390,19 @@
             </a>
         </span>
         <!-- Dataset Link. -->
-        <span class="link-block" style="background: transparent !important;">
-          <a href="https://github.com/google/nerfies/releases/tag/0.1"
+        <!-- <span class="link-block" style="background: transparent !important;">
+          <a href=""
               class="external-link button is-normal is-rounded is-dark" style="background: rgba(0, 0, 0, 0.5) !important;">
             <span class="icon" style="background: transparent !important;">
-                <i class="far fa-images"></i>
+                <i class="ai ai-huggingface"></i>
             </span>
-            <span style="background: transparent !important;">Data</span>
+            <span style="background: transparent !important;">huggingface</span>
             </a>
-        </span>
+        </span> -->
       </div>
     </div>
   </div>
 </section>
-
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section> -->
 
 
 <section class="section" style="margin-top: 10rem;">
@@ -405,205 +426,360 @@
   </div>
 </section>
 
-<section class="section"> 
-  <div class="hero-body" style="margin-top: -6rem;">
-    <div class="container" style="max-width: 80%;">
-      <h3 class="title is-4"  style=" margin-bottom: 0.1rem;"> Natural scenery </h3> 
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/android_face_coming_to_life_repeat-0-2.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/bird_ruffling_feathers_repeat-0-5.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/bounty_hunter_reloading_plasma_rifle_repeat-0-6.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/624_1739271433.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
-        </div>
-
+<section class="section" style="margin-top: 1rem;">
+  <!-- <div class="flex flex-dynamic" style="display: flex; flex-wrap: wrap;"> -->
+  <div class="container is-max-desktop" style="display: flex; flex-wrap: wrap; width: 100%;">
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-bottom: 0;">
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/animal11.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
       </div>
-
-      <h3 class="title is-4"  style=" margin-top: 2rem;"> Anime characters </h3> 
-      <div class="container" style="margin-top: 2rem;">
-        <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
-          <div class="prompt-wrap">
-            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/11_repeat-0.mp4"
-                      type="video/mp4">
-            </video>
-            <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
           </div>
-          <div class="prompt-wrap">
-            <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/56_repeat-0-5 2.mp4"
-                      type="video/mp4">
-            </video>
-            <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-          </div>
-          <div class="prompt-wrap">
-            <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/bounty_hunter_reloading_plasma_rifle_repeat-0-6.mp4"
-                      type="video/mp4">
-            </video>
-            <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-          </div>
-          <div class="prompt-wrap">
-            <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/2813_1739067107(Video in Original Quality).mp4"
-                      type="video/mp4">
-            </video>
-            <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-          </div>
-  
-        </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/animal2.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
       </div>
-
-    <h3 class="title is-4"  style=" margin-top: 2rem;"> Physical movement </h3> 
-    <div class="container" style=" margin-top: 2rem;">
-      <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
-        <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/11_repeat-0.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/13_repeat-0.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/48_repeat-0-15.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/56_repeat-0-5 2.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-
-      </div>
-    </div>
-    
-    <h3 class="title is-4" style=" margin-top: 2rem;" > Character speech </h3> 
-    <div class="container" style=" margin-top: 2rem;">
-      <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
-        <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/60_repeat-0-0.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/88._repeat-0-7.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/89_repeat-0-8.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/2813_1739067107(Video in Original Quality).mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/animal3.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
       </div>
     </div>
 
-    <h3 class="title is-4"  style=" margin-top: 2rem;"> Sci-fi scenes </h3> 
-    <div class="container" style="margin-top: 2rem;">
-      <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
-        <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/60_repeat-0-0.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/88._repeat-0-7.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/89_repeat-0-8.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/2813_1739067107(Video in Original Quality).mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%; margin-top: 0;">
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/animal4.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/animal5.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/anime-11.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
       </div>
     </div>
-  </div>
+
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%;">
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/aridron2.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/car1.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/scene-1.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+    </div>
+
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%;">
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/scene11.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/scene-2.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/scene-3.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+    </div>
+
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%;">
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/sci-fi1.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/sci-fi2.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/sci-fi3.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+    </div>
+
+
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%;">
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/scifi-11.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/scifi-12.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/13_repeat-0.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+    </div>
+
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%;">
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/11_repeat-0.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/sci-fi4.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/scifi-5.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+    </div>
+
+    <!-- <div style="display: flex; height: 33.33vh;"> -->
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%;">
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/scifi-6.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/scifi-7.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/scifi-8.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+    </div>
+
+    <div style="display: flex; height: 33.33vh; justify-content: center; width: 100%;">
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/scifi-9.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/scifi-11.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+      <div class="prompt-wrap full-screen-wrap" style="position: relative; flex: 1;">
+          <div class="loading-placeholder">
+              <div class="loading-text">Loading...</div>
+              <div class="loading-icon">☕</div>
+          </div>
+          <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./static/videos/upload/scifi-13.mp4" style="width: auto; height: 100%; object-fit: contain;"></video>
+          <div class="prompt"></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 
-<section class="section" >
+<!-- more specific downstream cases -->
+
+<section class="section">
+  <div class="hero-body">
+    <div class="container" style="max-width: 80%;">
+      <h2 class="title is-3">Step Distillation</h2>
+      <p> Magic 1-For-1 uses advanced step distillation algorithm, to train a "generator" model that can produce high-quality videos in just a few steps. This generator model is trained in conjunction with two other models: one that approximates the real data distribution and another that approximates the distribution of the generated data. By aligning these distributions, the generator model learns to produce realistic videos efficiently. We also incorporate CFG distillation to further reduce the computational overhead during inference.</p>
+    </div>  
+  </div> 
+  <div class="hero-body" style="margin-top: -4rem;">
+    <div class="container" style="max-width: 80%;">
+      <h3 class="title is-4">50 Steps</h3> 
+      <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
+        <div class="prompt-wrap">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/distill/teacher01_watermark.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
+        </div>
+        <div class="prompt-wrap">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/distill/teacher02_watermark.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
+        </div>
+        <div class="prompt-wrap">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/distill/teacher04_watermark.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
+        </div>
+        <div class="prompt-wrap">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/distill/teacher05_watermark.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
+        </div>
+        <div class="prompt-wrap">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/distill/teacher07_watermark.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
+        </div>
+
+      </div>
+    </div>
+    <div class="container" style="max-width: 80%; margin-top: 2rem;">
+      <h3 class="title is-4">4 Steps</h3> 
+      <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
+        <div class="prompt-wrap">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/distill/student01_watermark.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
+        </div>
+        <div class="prompt-wrap">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/distill/student02_watermark.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
+        </div>
+        <div class="prompt-wrap">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/distill/student04_watermark.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
+        </div>
+        <div class="prompt-wrap">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/distill/student05_watermark.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
+        </div>
+        <div class="prompt-wrap">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/distill/student07_watermark.mp4"
+                    type="video/mp4">
+          </video>
+          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" ></section>
   <div class="container is-max-desktop">
     <h2 class="title is-3">Architecture Overview</h2>
 
-    <div class="container" style="max-width: 100%;">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-fullbody">
-          <img src="./static/images/frame.png" alt="Full Body">
-        </div>
-        <div class="item item-fullbody">
-          <img src="./static/images/frame.png" alt="Full Body">
-        </div>
-        <div class="item item-fullbody">
-          <img src="./static/images/frame.png" alt="Full Body">
-        </div>
-        <div class="item item-fullbody">
-          <img src="./static/images/frame.png" alt="Full Body">
-        </div>
-
+    <div class="container" style="max-width: 50%;">
+      <div class="item item-fullbody">
+        <img src="./static/images/frame.png" alt="Full Body">
       </div>
     </div>
 
@@ -622,134 +798,17 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="hero-body">
-    <div class="container" style="max-width: 80%;">
-      <h2 class="title is-3">Step Distillation</h2>
-      <p> Magic 1-For-1 uses DMD2, a state-of-the-art step distillation algorithm, to train a "generator" model that can produce high-quality videos in just a few steps. This generator model is trained in conjunction with two other models: one that approximates the real data distribution and another that approximates the distribution of the generated data. By aligning these distributions, the generator model learns to produce realistic videos efficiently. We also incorporate CFG distillation to further reduce the computational overhead during inference.</p>
-    </div>  
-  </div> 
-  <div class="hero-body" style="margin-top: -4rem;">
-    <div class="container" style="max-width: 80%;">
-      <h3 class="title is-4">50 Steps</h3> 
-      <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
-        <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/distill/teacher01_watermark.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/distill/teacher02_watermark.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/distill/teacher04_watermark.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/distill/teacher05_watermark.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/distill/teacher07_watermark.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A high-quality video generated in 50 steps showing detailed motion and composition</div>
-        </div>
-
-      </div>
-    </div>
-    <div class="container" style="max-width: 80%; margin-top: 2rem;">
-      <h3 class="title is-4">4 Steps</h3> 
-      <div id="results-carousel" class="carousel results-carousel" style="margin-top: -1.3rem;">
-        <div class="prompt-wrap">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/distill/student01_watermark.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/distill/student02_watermark.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/distill/student04_watermark.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/distill/student05_watermark.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-        <div class="prompt-wrap">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/distill/student07_watermark.mp4"
-                    type="video/mp4">
-          </video>
-          <div class="prompt">A fast video generation in just 4 steps, demonstrating efficient processing</div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+    <pre><code>@article{yi2025magic,
+      title={Magic 1-For-1: Generating One Minute Video Clips within One Minute},
+      author={Hongwei Yi, Shitong Shao, Tian Ye, Jiantong Zhao, Qingyu Yin, Michael Lingelbach, Li Yuan, Yonghong Tian, Enze Xie, Daquan Zhou},
+      journal={arXiv preprint arXiv:2211.11018},
+      year={2025}
+    }</code></pre>
   </div>
 </section>
-
-
-<!-- <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the source code of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer> -->
 
 </body>
 </html>
