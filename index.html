@@ -425,8 +425,8 @@
             an efficient video generation model with optimized memory consumption and inference latency. 
             The key idea is simple: factorize the text-to-video generation task into two separate easier 
             tasks for diffusion step distillation, namely text-to-image generation and image-to-video generation. 
-            We verify that with the same optimization algorithm, the image-to-video task is indeed easier 
-            to converge over the text-to-video task. 
+            We verify that with the same optimization algorithm, the overall pipeline is indeed easier 
+            to converge. 
           </p>
         </div>
     </div>
@@ -803,7 +803,7 @@
       <div class="column is-full-width">
         <div class="content has-text-justified">
           <p>
-            Magic 1-For-1 is an efficient video generation model designed to create short video clips quickly.  It simplifies the complex task of generating videos from text by breaking it down into two easier steps: first, generating an image from the text, and then generating a video from that image. This approach leverages the relative simplicity of text-to-image generation.  The model incorporates several optimizations, including using both text and visual information to guide the image generation, and streamlining the video generation process to reduce the number of steps required.
+            Magic 1-For-1 is an efficient video generation model designed to create short video clips quickly.  It simplifies the complex task of generating videos from text by breaking it down into two easier steps: first, generating an image from the text, and then generating a video from that image. This approach leverages the relative simplicity of text-to-image generation.  The model incorporates several optimizations, including using multi-modal information to guide the video generation, and streamlining the video generation process to reduce the number of steps required.
           </p>
           <p>
             The model further enhances efficiency through techniques like adversarial step distillation, which accelerates the generation process, and parameter sparsification, which reduces memory usage.  These methods allow the model to generate short video clips in just a few seconds.  By using a sliding window approach during inference, the model can also create longer videos, up to a minute in length, while maintaining good visual quality and motion.
